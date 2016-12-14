@@ -33,14 +33,16 @@
             this.uploadProgress = new System.Windows.Forms.ProgressBar();
             this.uploadBtn = new System.Windows.Forms.Button();
             this.fileListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addFileBtn = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bucketCombo = new System.Windows.Forms.ComboBox();
             this.filesMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subDirBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.filesMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             // 
             this.uploadProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uploadProgress.Location = new System.Drawing.Point(15, 225);
+            this.uploadProgress.Location = new System.Drawing.Point(15, 268);
             this.uploadProgress.Name = "uploadProgress";
             this.uploadProgress.Size = new System.Drawing.Size(247, 23);
             this.uploadProgress.Step = 1;
@@ -68,7 +70,7 @@
             // 
             this.uploadBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.uploadBtn.Enabled = false;
-            this.uploadBtn.Location = new System.Drawing.Point(349, 225);
+            this.uploadBtn.Location = new System.Drawing.Point(349, 268);
             this.uploadBtn.Name = "uploadBtn";
             this.uploadBtn.Size = new System.Drawing.Size(75, 23);
             this.uploadBtn.TabIndex = 7;
@@ -83,18 +85,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fileListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.fileListView.Location = new System.Drawing.Point(15, 53);
+            this.fileListView.Location = new System.Drawing.Point(15, 88);
             this.fileListView.Name = "fileListView";
-            this.fileListView.Size = new System.Drawing.Size(409, 166);
+            this.fileListView.Size = new System.Drawing.Size(409, 174);
             this.fileListView.TabIndex = 8;
             this.fileListView.UseCompatibleStateImageBehavior = false;
             this.fileListView.View = System.Windows.Forms.View.Details;
             this.fileListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.fileListView_MouseClick);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "File";
+            this.columnHeader1.Width = 400;
+            // 
             // addFileBtn
             // 
             this.addFileBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addFileBtn.Location = new System.Drawing.Point(268, 225);
+            this.addFileBtn.Location = new System.Drawing.Point(268, 268);
             this.addFileBtn.Name = "addFileBtn";
             this.addFileBtn.Size = new System.Drawing.Size(75, 23);
             this.addFileBtn.TabIndex = 9;
@@ -123,23 +130,18 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "File";
-            this.columnHeader1.Width = 400;
             // 
             // bucketCombo
             // 
             this.bucketCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bucketCombo.FormattingEnabled = true;
-            this.bucketCombo.Location = new System.Drawing.Point(62, 27);
+            this.bucketCombo.Location = new System.Drawing.Point(87, 27);
             this.bucketCombo.Name = "bucketCombo";
-            this.bucketCombo.Size = new System.Drawing.Size(362, 21);
+            this.bucketCombo.Size = new System.Drawing.Size(337, 21);
             this.bucketCombo.TabIndex = 11;
             this.bucketCombo.SelectedIndexChanged += new System.EventHandler(this.bucketCombo_SelectedIndexChanged);
             // 
@@ -153,15 +155,35 @@
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            // 
+            // subDirBox
+            // 
+            this.subDirBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.subDirBox.Location = new System.Drawing.Point(87, 54);
+            this.subDirBox.Name = "subDirBox";
+            this.subDirBox.Size = new System.Drawing.Size(337, 20);
+            this.subDirBox.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Subdirectory:";
             // 
             // UploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 260);
+            this.ClientSize = new System.Drawing.Size(436, 303);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.subDirBox);
             this.Controls.Add(this.bucketCombo);
             this.Controls.Add(this.addFileBtn);
             this.Controls.Add(this.fileListView);
@@ -194,6 +216,8 @@
         private System.Windows.Forms.ComboBox bucketCombo;
         private System.Windows.Forms.ContextMenuStrip filesMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.TextBox subDirBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

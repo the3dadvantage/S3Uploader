@@ -117,7 +117,7 @@ namespace S3Uploader
 
             Thread t = new Thread(new ThreadStart(() => {
                 transUtil = new TransferUtility(client);
-
+                
                 while (selectedFiles.Count > 0)
                 {
                     TransferUtilityUploadRequest uploadRequest = new TransferUtilityUploadRequest
@@ -125,6 +125,12 @@ namespace S3Uploader
                         BucketName = bucketName,
                         FilePath = selectedFiles[0]
                     };
+                    
+                    if(subDirBox.Text.Length > 0)
+                    {
+                        string s = subDirBox.Text.Trim(new char[] { '/', '\\' });
+                        uploadRequest.Key = s + "/" + selectedFiles[0].Split(new char[] { '\\', '/' }).Last();
+                    }
 
                     uploadRequest.UploadProgressEvent += UploadRequest_UploadProgressEvent;
 
